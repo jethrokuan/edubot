@@ -1,2 +1,4 @@
 /.nrepl-history
 /.nrepl-port
+/profiles.clj
+/profile.boot

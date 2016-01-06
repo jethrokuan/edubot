@@ -1,9 +1,11 @@
 (ns edubot.slack
   (:require [clj-http.client :as client]
             [clojure.data.json :as json]
+            [environ.core :refer [env]]
             [compojure.core :refer [GET]]))
 
-(def user-list-url "https://slack.com/api/users.list?token=xoxp-4246027421-17745065153-17744148659-c770e016e4")
+(def user-list-url "https://slack.com/api/users.list?token=")
+(def user-list-url-with-token (str user-list-url (env :slack-web-token)))
 
 (defn user-id-from-email [email]
   (let [res (client/get user-list-url)

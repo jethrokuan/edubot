@@ -1,6 +1,7 @@
 (ns edubot.core
   (:gen-class)
-  (:require [reloaded.repl :refer [start go]]))
+  (:require [reloaded.repl :refer [start go]]
+            [edubot.systems :refer [dev-system]]))
 
 (defn -main
   "Start the Application"

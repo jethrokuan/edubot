@@ -14,12 +14,14 @@
                  ])
 
 (require '[edubot.systems :refer [dev-system]]
+         '[reloaded.repl :refer [init start stop go reset]]
          '[environ.boot :refer [environ]]
          '[system.boot :refer [system]])
 
 (deftask dev []
   (comp
-   (environ :env {:http-port "3000"})
+   (environ :env {:http-port "3000"
+                  :slack-web-token slack-web-token})
    (watch :verbose true)
    (system :sys #'dev-system :auto-start true :hot-reload true :files ["handler.clj"])
    #_(reload)
