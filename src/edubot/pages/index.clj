@@ -12,8 +12,9 @@
       [:div#logo
        [:img {:src "img/logo-with-text.png"}]]
       [:div#welcome-text.flow-text
-       [:h1 "Welcome to Tinkercademy!"]
+       [:h2 "Welcome to Tinkercademy!"]
        [:form {:action "/signup"}
         [:input {:type "text" :name "email" :placeholder "Email"}]
+        [:input {:type "text" :name "codeword" :placeholder "Codeword"}]
         [:button {:class "btn-large" :type "submit"}
          "Get your Slack Invite!"]]]]]]))

@@ -2,6 +2,7 @@
   (:require [clj-http.client :as client]
             [clojure.data.json :as json]
             [environ.core :refer [env]]
+            [compojure.core :refer [GET]]
             [compojure.core :refer [GET]]))
 
 (def user-list-url "https://slack.com/api/users.list?token=")
@@ -19,4 +20,6 @@
 (defn send-inv [r]
   "Hello World")
 
-
+(defn process-signup [email codeword]
+  (str email codeword)
+  )

@@ -6,6 +6,7 @@
                  [org.clojure/tools.nrepl "0.2.12"]                
                  [environ "1.0.1"]
                  [boot-environ "1.0.1"]
+                 [ring/ring-defaults "0.1.5"]
 
                  ;; Server
                  [hiccup "1.0.5"]
