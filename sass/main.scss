@@ -1,0 +1,44 @@
+// Configs
+@import "normalize";
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "materialize";
+@import "neat/neat";
+
+$mobile: new-breakpoint(max-width 900px 4);
+
+.container {
+    @include outer-container; 
+    @include media($mobile) {
+	padding-top: 0px;
+    }
+    padding-top: 200px;
+    .hero {
+	@include span-columns(8);
+	@include shift(1);
+	@include media($mobile) {
+	    @include span-columns(4);
+	    @include shift(0);
+	}
+    }
+    #logo {
+	text-align: center;
+	@include span-columns(3 of 8);
+	@include media($mobile) {
+	    @include span-columns(4);
+	}
+	img {
+	    width: 100%;
+	    @include media($mobile) {
+		width: 300px;
+	    }
+	}
+    }
+    #welcome-text {
+	text-align: center;
+	@include span-columns(5 of 8);
+	@include media($mobile) {
+	    @include span-columns(4);
+	}
+    }
+}

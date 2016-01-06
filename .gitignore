@@ -2,3 +2,6 @@
 /.nrepl-port
 /profiles.clj
 /profile.boot
+/.DS_Store
+/target/
+*.DS_Store
