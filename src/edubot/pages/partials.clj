@@ -3,5 +3,7 @@
             [hiccup.page :refer :all]))
 
 (defn page-head []
-  (include-css "css/main.css")
+  [:head
+   [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+   (include-css "css/main.css")]
   )

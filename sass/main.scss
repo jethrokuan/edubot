@@ -35,10 +35,16 @@ $mobile: new-breakpoint(max-width 900px 4);
 	}
     }
     #welcome-text {
+	h2 {
+	    margin-top: 5px;
+	}
 	text-align: center;
 	@include span-columns(5 of 8);
 	@include media($mobile) {
-	    @include span-columns(4);
+	    @include span-columns(4);	    
+	}
+	form {
+	    padding: 0 20px;
 	}
     }
 }

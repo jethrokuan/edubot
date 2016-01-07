@@ -2851,18 +2851,18 @@ label {
    Text Inputs + Textarea
 ****************************/
 ::-webkit-input-placeholder {
-  color: #d1d1d1; }
+  color: #BBB; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  color: #d1d1d1; }
+  color: #BBB; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #d1d1d1; }
+  color: #BBB; }
 
 :-ms-input-placeholder {
-  color: #d1d1d1; }
+  color: #BBB; }
 
 input:not([type]),
 input[type=text],
@@ -3796,6 +3796,8 @@ html {
     display: block;
     margin-right: 3.22581%;
     width: 61.29032%; }
+    .container #welcome-text h2 {
+      margin-top: 5px; }
     .container #welcome-text:last-child {
       margin-right: 0; }
     @media screen and (max-width: 900px) {
@@ -3806,3 +3808,5 @@ html {
         width: 100%; }
         .container #welcome-text:last-child {
           margin-right: 0; } }
+    .container #welcome-text form {
+      padding: 0 20px; }
