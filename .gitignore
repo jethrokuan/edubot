@@ -5,3 +5,5 @@
 /.DS_Store
 /target/
 *.DS_Store
+*.sass-cache
+*.DS_Store
