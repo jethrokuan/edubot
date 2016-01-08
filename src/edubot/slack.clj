@@ -3,9 +3,11 @@
             [clojure.data.json :as json]
             [environ.core :refer [env]]
             [compojure.core :refer [GET]]
-            [edubot.pages.errors :as errors]))
+            [edubot.pages.errors :as errors]
+            [edubot.pages.signup :refer [index-page signup-complete-page]]))
 
 (def TEAM-INVITE-URL "https://tinkercademy.slack.com/api/users.admin.invite")
+
 (def user-list-url-with-token (str "https://slack.com/api/users.list?token=" (env :slack-web-token)))
 
 (defn user-id-from-email [email]
@@ -22,18 +24,19 @@
                                               :email email
                                               :set_active true}}))
 
-(defn- dispatch-by-error [error]
+(defn- dispatch-page-by-error [error]
   (condp = error
     "already_invited" (errors/already-invited)
     "already_in_team" (errors/already-in-team)
     error)
   )
+
 (defn process-signup [email codeword]
   (let [res (send-inv email)
         body (-> res
                  :body
                  (json/read-str :key-fn keyword))]
     (if (:ok body)
-      "true"
-      (dispatch-by-error (:error body))
+      (signup-complete-page)
+      (dispatch-page-by-error (:error body))
       )))
