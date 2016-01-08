@@ -3,7 +3,7 @@
             [hiccup.page :refer :all]
             [edubot.pages.partials :refer :all]))
 
-(defn index-page []
+(defn index-page [channel]
   (html
    (page-head)
    [:body
@@ -12,9 +12,9 @@
       [:div#logo
        [:img {:src "img/logo-with-text.png"}]]
       [:div#welcome-text.flow-text
-       [:h2 "Welcome to Tinkercademy!"]
+       [:h1 "Welcome!"]
        [:form {:action "/signup"}
         [:input {:type "text" :name "email" :placeholder "Email"}]
-        [:input {:type "text" :name "codeword" :placeholder "Codeword"}]
+        [:input {:type "hidden" :name "channel" :placeholder "Channel" :value channel}]
         [:button {:class "btn-large" :type "submit"}
          "Get your Slack Invite!"]]]]]]))

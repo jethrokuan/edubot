@@ -2,10 +2,18 @@
 @import "normalize";
 @import "bourbon/bourbon";
 @import "grid-settings";
-@import "materialize";
+@import "materialize/materialize";
 @import "neat/neat";
+@import "typeplate/styles";
+@import "headers";
 
 $mobile: new-breakpoint(max-width 900px 4);
+
+.btn {
+    @extend .cyan}
+
+a.error {
+    @extend .red}
 
 .container {
     @include outer-container; 
@@ -34,7 +42,9 @@ $mobile: new-breakpoint(max-width 900px 4);
 	    }
 	}
     }
-    #welcome-text {
+}
+
+ #welcome-text {
 	h2 {
 	    margin-top: 5px;
 	}
@@ -47,4 +57,7 @@ $mobile: new-breakpoint(max-width 900px 4);
 	    padding: 0 20px;
 	}
     }
-}
+
+ #hero-text {
+     padding: 0 20px;
+ }

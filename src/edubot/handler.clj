@@ -6,7 +6,8 @@
             [edubot.pages.index :refer [index-page]]))
 
 (defroutes routes
-  (GET "/" [] (index-page))
+  (GET "/" {params :params} [] (let [channel (:channel params)]
+                                 (index-page channel)))
   (GET "/signup" {params :params} [] (let [email (:email params)
                                            codeword (:codeword params)]
                                        (process-signup email codeword)))

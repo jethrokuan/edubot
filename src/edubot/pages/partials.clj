@@ -5,5 +5,5 @@
 (defn page-head []
   [:head
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-   (include-css "css/main.css")]
-  )
+   [:link {:href "https://fonts.googleapis.com/css?family=Lato|Dosis:700" :type "text/css" :rel "stylesheet"}]
+   (include-css "css/main.css")])
