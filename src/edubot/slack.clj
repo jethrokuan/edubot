@@ -4,7 +4,7 @@
             [environ.core :refer [env]]
             [compojure.core :refer [GET]]
             [edubot.pages.errors :as errors]
-            [edubot.pages.signup :refer [index-page signup-complete-page]]))
+            [edubot.pages.signup :refer [signup-page signup-complete-page]]))
 
 (def TEAM-INVITE-URL "https://tinkercademy.slack.com/api/users.admin.invite")
 

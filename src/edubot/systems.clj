@@ -7,3 +7,6 @@
 
 (defsystem dev-system
   [:web (new-web-server (env :http-port) handler)])
+
+(defsystem prod-system
+  [:web (new-web-server (env :http-port) handler)])

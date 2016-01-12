@@ -1,10 +1,10 @@
 (ns edubot.core
   (:gen-class)
   (:require [reloaded.repl :refer [start go]]
-            [edubot.systems :refer [dev-system]]))
+            [edubot.systems :refer [dev-system prod-system]]))
 
 (defn -main
   "Start the Application"
   []
-  (reloaded.repl/set-init! dev-system)
+  (reloaded.repl/set-init! prod-system)
   (go))

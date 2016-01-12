@@ -3,7 +3,7 @@
  :resource-paths #{"resources" "sass"}
  :dependencies '[[org.clojure/clojure "1.7.0" :scope "provided"]
                  [org.danielsz/system "0.2.0"]
-                 [org.clojure/tools.nrepl "0.2.12"]                
+                 [org.clojure/tools.nrepl "0.2.12"]
                  [environ "1.0.1"]
                  [boot-environ "1.0.1"]
                  [ring/ring-defaults "0.1.5"]
@@ -23,7 +23,7 @@
 (require '[edubot.systems :refer [dev-system]]
          '[reloaded.repl :refer [init start stop go reset]]
          '[environ.boot :refer [environ]]
-         '[system.boot :refer [system]]
+         '[system.boot :refer [system run]]
          '[mathias.boot-sassc :refer [sass]]
          #_         '[deraen.boot-sass :refer [sass]]
          '[boot.util :refer [dosh]])
@@ -37,6 +37,13 @@
    #_(reload)
    (repl :server true)
    (target :dir #{"target"})))
+
+(deftask prod []
+  (comp
+   (environ :env {:http-port "8080"
+                  :slack-web-token slack-web-token})
+   (run :main-namespace "edubot.core")
+   (wait)))
 
 (deftask scss []
   (comp
